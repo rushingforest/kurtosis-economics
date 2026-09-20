@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurtosis Economics</title>
+<meta name="description" content="Economic strategy and technical due diligence.">
+<style>
+  :root {
+    --paper: #f3efe7;
+    --paper-deep: #ece6da;
+    --ink: #2b2722;
+    --ink-soft: #555046;
+    --ink-faint: #8c8578;
+    --rust: #9c6b4f;
+    --hairline: #d8d1c3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--paper-deep); color: var(--ink); }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Enso ---------- */
+  .enso {
+    width: 108px;
+    height: 108px;
+    display: block;
+    margin: 96px auto 40px;
+    opacity: 0.82;
+  }
+
+  /* ---------- Masthead ---------- */
+  header.masthead { text-align: center; }
+
+  h1 {
+    font-weight: 400;
+    font-size: 34px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .tagline {
+    margin-top: 14px;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+  }
+
+  .rule {
+    width: 44px;
+    height: 1px;
+    background: var(--hairline);
+    margin: 40px auto 0;
+  }
+
+  /* ---------- Sections ---------- */
+  section {
+    padding: 72px 0;
+  }
+
+  section + section { border-top: 1px solid var(--hairline); }
+
+  .section-label {
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 22px;
+  }
+
+  p {
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  em { color: var(--ink); }
+
+  /* ---------- Practice blocks ---------- */
+  .practice { margin-bottom: 52px; }
+  .practice:last-child { margin-bottom: 0; }
+
+  .practice h2 {
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .practice h2 span {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+    margin-left: 10px;
+  }
+
+  /* ---------- IDD pull-quote block ---------- */
+  .idd-note {
+    margin-top: 36px;
+    padding: 32px 30px 30px 36px;
+    border-left: 1px solid var(--hairline);
+    background: rgba(255, 253, 247, 0.45);
+  }
+
+  .idd-note .idd-title {
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+
+  .idd-note p { font-size: 17px; }
+
+  /* ---------- Contact ---------- */
+  section.contact { text-align: center; padding-bottom: 40px; }
+
+  section.contact p.lede { color: var(--ink-soft); }
+
+  .email {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 17px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rust);
+    padding-bottom: 2px;
+    letter-spacing: 0.02em;
+    transition: color 0.4s ease;
+  }
+
+  .email:hover { color: var(--rust); }
+
+  /* ---------- Epigraph & footer ---------- */
+  .epigraph {
+    text-align: center;
+    padding: 56px 0 44px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .epigraph p {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+
+  .epigraph span {
+    font-size: 13px;
+    color: var(--ink-faint);
+    opacity: 0.75;
+    letter-spacing: 0.08em;
+  }
+
+  footer.copyright {
+    text-align: center;
+    padding: 0 0 64px;
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+  }
+
+  /* Subtle entrance fade — quiet, not showy */
+  .fade {
+    opacity: 0;
+    transform: translateY(6px);
+    animation: settle 1.6s ease-out forwards;
+  }
+  .fade.d1 { animation-delay: 0.25s; }
+  .fade.d2 { animation-delay: 0.5s; }
+  .fade.d3 { animation-delay: 0.8s; }
+
+  @keyframes settle {
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade { animation: none; opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    h1 { font-size: 27px; }
+    .enso { margin-top: 64px; }
+    .practice h2 span { display: block; margin: 4px 0 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- Enso: drawn imperfectly, open — completeness left unfinished -->
+  <svg class="enso fade" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <path d="M50 8
+             C 74 8, 90 26, 89 50
+             C 88 76, 68 91, 46 90
+             C 25 89, 11 73, 12 52
+             C 13 33, 27 20, 45 20"
+          stroke="#4a443b" stroke-width="2.4" stroke-linecap="round"
+          opacity="0.75"/>
+  </svg>
+
+  <header class="masthead fade d1">
+    <h1>Kurtosis Economics</h1>
+    <p class="tagline">On the tails of things.</p>
+  </header>
+
+  <div class="rule fade d2" role="presentation"></div>
+
+  <section class="intro fade d2">
+    <p>
+      Kurtosis Economics advises leaders on the questions where the average
+      answer fails -- where outcomes live in the tails. We practice two
+      disciplines, <em>economic strategy</em> and <em>technical due
+      diligence</em>, each built on rare experience and held to a high standard.
+    </p>
+  </section>
+
+  <section class="practices fade d3">
+    <div class="practice">
+      <h2>Economic Strategy <span>&mdash; geoeconomics, theory &amp; application</span></h2>
+      <p>
+        World-class depth in the economics of statecraft and rivalry and competition at many scales: how
+        nations, firms, and markets compete when the stakes extend past balance sheets.
+        We bring rigorous theory to bear on national-security
+        decision-making and on private competition (sanctions posture and
+        exposure, supply-chain leverage, industrial capacity, market power, hedging of unique risks,
+        epistemic uncertainty description, ...)
+        and on the strategies available to those who move before others do.
+      </p>
+      <p>
+        Wherever possible, we quantify, and where quantification fails we say so plainly.
+      </p>
+    </div>
+
+    <div class="practice">
+      <h2>Technical Due Diligence <span>&mdash; rigorous and exacting judgment; a unique method</span></h2>
+      <p>
+        Experience formed inside the world&rsquo;s leading research and
+      development organizations in which technologies are made, judged,
+      funded, and sometimes quietly abandoned. We evaluate technical claims,
+      teams, and roadmaps with skepticism earned by having built things ourselves.
+      </p>
+      <div class="idd-note">
+        <div class="idd-title">Invertible Due Diligence</div>
+        <p>
+          Our signature methodology. Most assessments are written to be
+          believed; ours are written to be <em>reversed</em>. Every conclusion
+          is paired with its contrary case and the specific evidence that
+          would overturn it — so that what remains standing has earned its
+          place. The result is diligence the logic of which can be checked, both by-hand and formally, from
+          either direction, and findings that hold their shape under
+          adversarial review. The full method is disclosed to clients.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact fade">
+    <p class="section-label" style="text-align:center;">Enquiries</p>
+    <p class="lede">We take a small number of engagements each year.</p>
+    <!-- Replace the placeholder below with your email address -->
+    <a class="email" href="mailto:kurtosis-economics.impound751@passmail.net">kurtosis-economics.impound751@passmail.net</a>
+  </section>
+
+  <footer class="copyright">
+    Copyright Kurtosis Economics, 2026 &ndash; present. All rights reserved.
+  </footer>
+
+</div>
+
+</body>
+</html>
